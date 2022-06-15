@@ -37,13 +37,14 @@ public class OracleLiteContract extends Ownable implements Contract {
         }
     }
 
+    @JSONSerializable
     @View
     public ValueInfo getValue(@Required String key) {
         ValueInfo info = dataMap.get(key);
         return info;
     }
 
-
+    @JSONSerializable
     @View
     public ValueInfo[] getValues(@Required String[] keys) {
         ValueInfo[] values = new ValueInfo[keys.length];
